@@ -157,14 +157,14 @@ adb forward tcp:8080 tcp:8080</code></pre>
                     io.selendroid/.ServerInstrumentation</code></li>
                 <li>Do the port forwarding: <code>adb forward tcp:8080 tcp:8080</li></code>
                 <li><code>cd selendroid-test-app</code></li>
+                <li>run the
                 <ul>
-                    <li>run the native tests</li>
+                    <li>native tests</li>
                     <li>mvn install -DskipTests=false -DtestngGroups=native</li>
-                </ul>
-                <ul>
-                    <li>run the web view tests</li>
+                    <li>web view tests</li>
                     <li>mvn install -DskipTests=false -DtestngGroups=webview</li>
                 </ul>
+                </li>
             </ul>
 
             <h2 id="ci">CI Infrastructure</h2>
