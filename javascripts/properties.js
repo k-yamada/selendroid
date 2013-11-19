@@ -30,7 +30,7 @@ buildFooter = function () {
     $("#footer_wrap").html('<a href="https://github.com/selendroid/selendroid"></a>' +
         '<a href="http://groups.google.com/group/selendroid" class="button">Selendroid Mailing list</a>'+
         'is maintained by <a href="https://github.com/selendroid/selendroid/blob/master/AUTHORS">Selendroid authors</a>.' +
-        '<p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>');
+        '<br><a href="http://ebayopensource.github.io/"><img border="0" height="60px" src="images/ebay-logo.png" alt="eBay Software Foundation">©2012-2013 eBay Software Foundation</a>');
 };
 
 buildMenu = function (page) {
