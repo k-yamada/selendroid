@@ -69,17 +69,17 @@
                 <li>Download selenium-server-standalone from the Selenium Project</li>
                 <li>Download selendroid-standalone</li>
                 <li>Download selendroid-testapp</li>
-                <li>Download <a href="http://search.maven.org/remotecontent?filepath=io/selendroid/selendroid-grid-plugin/0.5.1/selendroid-grid-plugin-0.5.1.jar">selendroid-grid-plugin</a></li>
+                <li>Download <a href="http://search.maven.org/remotecontent?filepath=io/selendroid/selendroid-grid-plugin/0.6.0/selendroid-grid-plugin-0.6.0.jar">selendroid-grid-plugin</a></li>
                 <li>copy all the artifacts into the folder where the selenium-server-standalone is stored.</li>
 
             </ol>
             <h2 id="start">Start all servers</h2>
             <p>First, the selendroid-standalone should be started (more details you find <a href="http://selendroid.io/setup.html#launchingSelendroid">here</a>):</p>
-            <pre><code>java -jar selendroid-standalone-0.5.1-with-dependencies.jar \
+            <pre><code>java -jar selendroid-standalone-0.6.0-with-dependencies.jar \
             -app selendroid-test-app-0.5.1.apk</code></pre>
             <p>Now you can start the Grid with the <code>selendroid-grid-plugin</code> that contains the proxy <code>io.selendroid.grid.SelendroidSessionProxy</code> and a simple capability matcher <code>io.selendroid.grid.SelendroidCapabilityMatcher</code>.</p>
 <pre><code>java -Dfile.encoding=UTF-8 \ 
--cp "selendroid-grid-plugin-0.5.1.jar:selenium-server-standalone-2.35.0.jar" \
+-cp "selendroid-grid-plugin-0.6.0.jar:selenium-server-standalone-2.38.0.jar" \
 org.openqa.grid.selenium.GridLauncher \ 
 -capabilityMatcher io.selendroid.grid.SelendroidCapabilityMatcher \
 -role hub -host 127.0.0.1 -port 4444</code></pre>
@@ -91,7 +91,7 @@ org.openqa.grid.selenium.GridLauncher \
 		"locale": "en_GB",
 		"androidTarget": "ANDROID16",
 		"screenSize": "480x800",
-		"aut": "io.selendroid.testapp:0.5.1"
+		"aut": "io.selendroid.testapp:0.6.0"
 	}],
 	"configuration": {
 		"maxSession": 1,
@@ -116,7 +116,7 @@ http://localhost:4444/grid/register</code></pre>
   public void testShouldBeAbleToRegisterAnUser() throws Exception {
     SelendroidCapabilities capa =
         SelendroidCapabilities.emulator(DeviceTargetPlatform.ANDROID16,
-            "io.selendroid.testapp:0.5.1");
+            "io.selendroid.testapp:0.6.0");
     capa.setLocale("en_GB");
     WebDriver driver = new SelendroidDriver("http://localhost:4444/wd/hub", capa);
     driver.findElement(By.id("startUserRegistration")).click();

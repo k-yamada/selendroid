@@ -107,30 +107,10 @@
 
             <p>For building Selendroid from scratch (only needed for commiters!) we use Maven 3.0.x and you have to follow the following steps:</p>
 
-<pre><code>git clone https://github.com/DominikDary/selendroid.git
+<pre><code>git clone https://github.com/selendroid/selendroid.git
 cd selendroid/selendroid-server
-mvn install -Dandroid.renameInstrumentationTargetPackage=io.selendroid.testapp</code></pre>
-
-            <p><strong>Important</strong>: You must replace <em>io.selendroid.testapp</em> with the <em>default package</em> of your app.</p>
-
-            <p>If you want to run the selendroid server:</p>
-
-<pre><code># install the selendroid server:
-adb install -r target/selendroid-server-0.X.apk
-# start the selendroid server:
-adb shell am instrument -e main_activity 'io.selendroid.testapp.HomeScreenActivity' io.selendroid/.ServerInstrumentation
-# replace 'io.selendroid.testapp.HomeScreenActivity' with your app's 'main activity'.
-# activate port forwarding.
-adb forward tcp:8080 tcp:8080</code></pre>
-
-            <p>If you see errors like this (while installing or running):</p>
-
-<pre><code>Failure [INSTALL_PARSE_FAILED_INCONSISTENT_CERTIFICATES]</code></pre>
-
-            <p>This means selendroid-server app and the app under tests have been signed with different certificates.
-                Selendroid server is by default signed with the debug certificate of the machine where it was build.
-                For re-signing the app under test you can use the <a href="http://www.troido.de/re-sign.jar">re-sign tool</a>,
-                which is available under the Apache 2 Licence.</p>
+mvn package</code></pre>
+             <p>You will then be able to get your version of the standalone-server in selendroid-standalone/target/</p>
 
             <h2 id="testIt">Testing Selendroid itself</h2>
             <p>To test selendroid there is a <a href="https://github.com/selendroid/selendroid/tree/master/selendroid-test-app">special app</a> that we use to verify that everything is working as expected. The end-to-end tests for this application are called large tests are are located <a href="https://github.com/selendroid/selendroid/tree/master/selendroid-test-app/src/test/java/io/selendroid">here</a>.</p>

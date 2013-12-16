@@ -111,8 +111,8 @@
             <p>Download <a href="#download_me">selendroid-standalone.jar</a> (right top section of this page)</p>
             </p>
             cd to the folder where you downloaded the jar, and run
-            <pre><code>java -jar selendroid-standalone-0.5.1-with-dependencies.jar \ 
-            -app selendroid-test-app-0.5.1.apk</code></pre>
+            <pre><code>java -jar selendroid-standalone-0.6.0-with-dependencies.jar \ 
+            -app selendroid-test-app-0.6.0.apk</code></pre>
 
             <p>Selendroid-standalone will start a http server on port 5555 and will scan all Android virtual devices
                 (avd)
@@ -134,10 +134,10 @@
     },
     "build": {
         "browserName": "selendroid",
-        "version": "0.5.1"
+        "version": "0.6.0"
     },
     "supportedApps": [{
-        "appId": "io.selendroid.testapp:0.5.1",
+        "appId": "io.selendroid.testapp:0.6.0",
         "mainActivity": "io.selendroid.testapp.HomeScreenActivity",
         "basePackage": "io.selendroid.testapp"
     }],
@@ -188,7 +188,7 @@
 <pre><code>SelendroidCapabilities capa =
   SelendroidCapabilities.emulator(
     DeviceTargetPlatform.ANDROID18,
-      "io.selendroid.testapp:0.5.1");
+      "io.selendroid.testapp:0.6.0");
 
 WebDriver driver = new SelendroidDriver("http://localhost:5555/wd/hub", capa);
 WebElement inputField = driver.findElement(By.id("my_text_field"));
